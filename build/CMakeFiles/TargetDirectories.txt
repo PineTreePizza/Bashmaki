@@ -1,0 +1,3 @@
+/home/pine/Programming/C++/SDL/Bashmaki/build/CMakeFiles/bashmaki.dir
+/home/pine/Programming/C++/SDL/Bashmaki/build/CMakeFiles/edit_cache.dir
+/home/pine/Programming/C++/SDL/Bashmaki/build/CMakeFiles/rebuild_cache.dir
