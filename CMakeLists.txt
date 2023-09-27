@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(something VERSION 1.0)
+project(bashmaki VERSION 1.0)
 
-add_executable(bashmaki src/main.cpp)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_executable(${PROJECT_NAME} src/main.cpp)
 
-find_package(SDL2 REQUIRED)
-find_package(SDL2_Image REQUIRED)
+INCLUDE(FindPkgConfig)
 
-target_link_libraries(bashmaki SDL2::SDL2main SDL2::SDL2 SDL2_image::SDL2_image)
+PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
+
+INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES})

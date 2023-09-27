@@ -51,6 +51,7 @@ int main(int argc, char *argv[]) {
   SDL_FreeSurface(image);
   SDL_DestroyRenderer(renderer);
   window = NULL;
+
   IMG_Quit();
   SDL_Quit();
 
